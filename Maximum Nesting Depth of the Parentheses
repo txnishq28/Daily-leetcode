@@ -1,0 +1,21 @@
+DATE- 04-04-2024
+QUESTION - Maximum Nesting Depth of the Parentheses
+TOPICS- STRING & STACK
+
+SOURCE CODE (IN C++) -:
+ 
+class Solution {
+ public:
+  int maxDepth(string s) {
+    int a = 0;
+    int o = 0;
+
+    for (const char c : s)
+      if (c == '(')
+        a = max(a, ++o);
+      else if (c == ')')
+        --o;
+
+    return a;
+  }
+};
